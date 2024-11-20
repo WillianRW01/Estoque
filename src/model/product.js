@@ -1,5 +1,5 @@
 const database = require('../database');
-const Organization = require('./organization'); 
+const Organization = require('./organization');
 
 class Product {
     constructor() {
@@ -13,12 +13,12 @@ class Product {
                 type: database.db.Sequelize.STRING,
                 allowNull: false
             },
-             description: {
+            description: {
                 type: database.db.Sequelize.STRING,
                 allowNull: false,
                 unique: true
             },
-            organizationId: { 
+            organizationId: {
                 type: database.db.Sequelize.INTEGER,
                 references: {
                     model: Organization,

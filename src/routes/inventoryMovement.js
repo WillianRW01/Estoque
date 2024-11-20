@@ -3,7 +3,7 @@ const ApiInventoryMovement =require ('../api/inventoryMovement')
 
 const movementRouter = express.Router();
 
-movementRouter.get('/', ApiInventoryMovement.FindAll)
+movementRouter.get('/inventoryId', ApiInventoryMovement.FindAll)
 movementRouter.get('/:id', ApiInventoryMovement.FindById)
 
 movementRouter.post('/', ApiInventoryMovement.Create)

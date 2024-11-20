@@ -16,7 +16,7 @@ class InvertoryMovement {
                 type: database.db.Sequelize.STRING,
                 allowNull: false
             },
-             amout: {
+             amount: {
                 type: database.db.Sequelize.INTEGER,
                 allowNull: false,
             },

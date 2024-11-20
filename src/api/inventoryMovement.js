@@ -2,7 +2,8 @@ class ApiInventoryMovement{
 
     async FindById(req,res){
        try {
-           const { id } = req.params
+        const organizationId = 1
+           const {id,  inventoryId } = req.params
            const inventoryMovement ={} 
            res.status(200).send({inventoryMovement})
        } catch (error) {
@@ -12,6 +13,8 @@ class ApiInventoryMovement{
 
     async FindAll(req,res){
         try {
+            const organizationId = 1
+            const {inventoryId } = req.params
             const inventoryMovements =[{}]
             res.status(200).send({inventoryMovements})
         } catch (error) {
@@ -22,7 +25,10 @@ class ApiInventoryMovement{
    
     async Create(req,res){
        try {
-           const { id } = req.params
+        const organizationId = 1
+        const userId = 1
+        const {inventoryId } = req.params
+        const {type, amount, productId}= req.body
            const inventoryMovement ={} 
            res.status(200).send({inventoryMovement})
        } catch (error) {
@@ -32,7 +38,9 @@ class ApiInventoryMovement{
    
     async Update(req,res){
        try {
-           const { id } = req.params
+        const organizationId = 1
+        const {id,  inventoryId } = req.params
+        const {type, amount, productId}= req.body
            const inventoryMovement ={} 
            res.status(200).send({inventoryMovement})
        } catch (error) {
@@ -42,7 +50,8 @@ class ApiInventoryMovement{
    
     async Delete(req,res){
        try {
-           const { id } = req.params
+        const organizationId = 1
+        const {id,  inventoryId } = req.params
            const inventoryMovement ={} 
            res.status(200).send({inventoryMovement})
        } catch (error) {
