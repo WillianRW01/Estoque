@@ -83,7 +83,7 @@ class ServiceUser {
         }
         const verify = await bcrypt.compare(password, user.password);
         if (verify) {
-     
+
             return jwt.sign(
                 {
                     id: user.id,
@@ -96,9 +96,13 @@ class ServiceUser {
         }
         throw new Error("E-mail ou senha inválidos.");
     }
-    
-    
-    // async Verifify
+
+
+    async Verify(id, role,transaction) {
+        return ModelUser.findOne({
+            where: {  id ,role},transaction,}
+        );
+    }
 }
 
 module.exports = new ServiceUser();
