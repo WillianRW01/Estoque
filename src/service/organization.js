@@ -29,21 +29,21 @@ class ServiceOrganization {
         return { organization, user: { ...user.dataValues, password } };
     }
 
-
     async Update(id, name, address, phone, email, transaction) {
         const organization = await this.FindById(id, transaction);
-
+    
         if (!organization) {
             throw new Error("Organização não encontrada");
         }
+    
         organization.name = name || organization.name;
         organization.address = address || organization.address;
         organization.phone = phone || organization.phone;
         organization.email = email || organization.email;
-
+    
         return organization.save({ transaction });
-
     }
+    
 
     async Delete(id, transaction) {
         const organization = await OrganizationModel.findByPk(id, { transaction });

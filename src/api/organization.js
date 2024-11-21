@@ -27,8 +27,8 @@ class ApiOrganization {
     async Update(req, res) {
         try {
             const { id } = req.params;
-            const data = req.body;
-            const organization = await ServiceOrganization.Update(id, data);
+            const { name, address, phone, email } = req.body; // Extração correta dos campos
+            const organization = await ServiceOrganization.Update(id, name, address, phone, email);
             res.status(200).send(organization);
         } catch (error) {
             res.status(400).send({ msg: error.message });
